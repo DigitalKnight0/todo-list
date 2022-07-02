@@ -1,0 +1,25 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "N/A",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DigitalKnight0/todo-list.git"
+  },
+  "author": "DigitalKnight0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DigitalKnight0/todo-list/issues"
+  },
+  "homepage": "https://github.com/DigitalKnight0/todo-list#readme",
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
