@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
@@ -12,12 +12,24 @@
     <div class="header"></div>
     <div class="content">
         <div class="sidebar">
-            
+
         </div>
         <div class="todo-list">
             <p class="project-name"></p>
             <div class="display"></div>
         </div>
     </div>
+
+    <template id="card-template">
+        <div class="card">
+            <input type="checkbox" class="completed">
+            <p class="title"></p>
+            <p class="date"></p>
+            <p class="priority"></p>
+
+            <button class="edit">Edit</button>
+            <button class="remove">X</button>
+        </div>
+    </template>
 </body>
 </html>
