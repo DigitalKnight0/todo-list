@@ -1,3 +1,3 @@
-import OnPageLoad from './events.js'
+import OnPageLoad from './events';
 
-OnPageLoad()
+OnPageLoad();
