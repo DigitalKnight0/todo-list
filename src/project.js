@@ -1,6 +1,6 @@
-import { isToday, isThisWeek } from 'date-fns';
-import createTodo from './todos';
-import { updateStorage, getStorage } from './storage';
+import { isToday, isThisWeek } from "date-fns";
+import createTodo from "./todos";
+import { updateStorage, getStorage } from "./storage";
 
 function initializeProjects() {
   const savedProjects = getStorage();
@@ -56,7 +56,7 @@ function getDailyProjects() {
     const filtered = clonedObj[project].map((todo) => {
       const date = new Date(todo.dueDate);
       if (isToday(date)) return todo;
-      return '';
+      return "";
     });
     clonedObj[project] = filtered;
   });
@@ -69,7 +69,7 @@ function getWeeklyProjects() {
     const filtered = clonedObj[project].map((todo) => {
       const date = new Date(todo.dueDate);
       if (isThisWeek(date)) return todo;
-      return '';
+      return "";
     });
     clonedObj[project] = filtered;
   });
@@ -77,7 +77,13 @@ function getWeeklyProjects() {
 }
 
 function verifyProjectName(projectName) {
-  const defaults = ['Daily', 'Daily Projects', 'This Week', 'Weekly Projects', 'inbox'];
+  const defaults = [
+    "Daily",
+    "Daily Projects",
+    "This Week",
+    "Weekly Projects",
+    "inbox",
+  ];
   const customProjects = Object.keys(projects);
   const existingProjects = defaults.concat(customProjects);
   return existingProjects.includes(projectName);

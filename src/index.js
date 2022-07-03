@@ -1,3 +1,3 @@
-import OnPageLoad from './events';
+import OnPageLoad from "./events";
 
 OnPageLoad();
