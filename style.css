@@ -15,21 +15,44 @@ body{
     display: flex;
 }
 
+.header{
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: coral;
+    padding: 20px;
+}
+
 .sidebar{
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 10px;
-    gap: 20px;
+    gap: 40px;
+    background-color: aqua;
+}
 
+.sidebar button{
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.sidebar button:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
 }
 
 .defaults{
-    height: 100px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
     justify-content: space-between;
+}
+
+.defaults > *{
+    border: 1px solid green;
+    padding: 10px;
 }
 
 .sidebar > div:nth-child(2){
@@ -48,6 +71,7 @@ body{
     justify-content: space-between;
     padding: 8px;
     align-items: center;
+    border: 1px solid darkgreen;
 }
 
 .projects{
@@ -71,6 +95,15 @@ body{
 .todo-list{
     flex: 4;
     padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+.todo-list button{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
 }
 
 .todo-header{
@@ -139,8 +172,55 @@ form{
 
 .new-todo, .new-project{
     align-self: center;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
+}
+
+form{
+    background-color: whitesmoke;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+form>ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 5px;
+}
+
+form button{
+    background-color: cyan;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form button:hover{
+    opacity: 0.7
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cancel{
+    background-color: lightcoral;
+}
+
+.project-tab:hover, .defaults>p:hover{
+    background-color: lightgreen;
+    border: 1px solid white;
+}
+
+.todo-list button:hover{
+    background-color: white;
+    color: black;
+    border: none;
 }
 
 .hidden{
