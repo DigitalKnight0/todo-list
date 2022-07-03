@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header"></div>
+    <div class="header">Todo List</div>
     <div class="content">
         <div class="sidebar">
             <div class="defaults">
@@ -37,10 +37,14 @@
 
     <div class="form-wrapper n-project hidden">
         <form action="" class="project-form">
-            <label for="project-name">Project name: </label>
-            <input type="text" id="project-name" required>
-            <button>Add Project</button>
-            <button class="cancel" type="button">Cancel</button>
+            <div>
+                <label for="project-name">Project name: </label>
+                <input type="text" id="project-name" required>
+            </div>
+            <div class="form-buttons">
+                <button>Add Project</button>
+                <button class="cancel" type="button">Cancel</button>
+            </div>
         </form>
     </div>
 
@@ -65,26 +69,36 @@
                     </select>
                 </li>
             </ul>
-            <button>Add Todo</button>
-            <button class="cancel" type="button">Cancel</button>
+            <div class="form-buttons">
+                <button>Add Todo</button>
+                <button class="cancel" type="button">Cancel</button>
+            </div>
         </form>
     </div>
 
     <div class="form-wrapper e-todo hidden">
         <form action="" class="edit-todo-form">
             <p>Edit Todo</p>
-            <label for="date">Due Date</label>
-            <input type="date" id="date" required>
-            <label for="priority">Priority:</label>
-            <select name="priority" id="priority">
-                <option value="low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-              </select>
+            <ul>
+                <li>
+                    <label for="date">Due Date</label>
+                    <input type="date" id="date" required>
+                </li>
+                <li>
+                    <label for="priority">Priority:</label>
+                    <select name="priority" id="priority">
+                        <option value="low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                      </select>
+                </li>
+            </ul>
             <input type="hidden" id="index">
             <input type="hidden" id="project">
-            <button>Save Changes</button>
-            <button class="cancel" type="button">Cancel</button>
+            <div class="form-buttons">
+                <button>Save Changes</button>
+                <button class="cancel" type="button">Cancel</button>
+            </div>
         </form>
     </div>
 

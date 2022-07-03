@@ -96,7 +96,7 @@ function openEditForm(e){
     const form = document.querySelector('.edit-todo-form')
     form.querySelector('#index').value = e.target.getAttribute('data-index')
     form.querySelector('#project').value = e.target.getAttribute('data-project')
-    form.classList.remove('e-todo')
+    document.querySelector('.e-todo').classList.remove('hidden')
 }
 
 document.querySelectorAll('.cancel').forEach(button => {
