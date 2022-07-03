@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid black;
 }
 
 body{
@@ -47,6 +46,8 @@ body{
 .project-tab{
     display: flex;
     justify-content: space-between;
+    padding: 8px;
+    align-items: center;
 }
 
 .projects{
@@ -55,8 +56,72 @@ body{
     gap: 10px;
 }
 
+.project-name{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize
+}
+
+.delete-project, .remove{
+    border-radius: 50%;
+    padding: 5px;
+}
+
 .todo-list{
     flex: 4;
+    padding: 10px;
+}
+
+.todo-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card{
+    padding: 10px;
+    position: relative;
+    height: 50px;
+}
+
+.card > *{
+    position: absolute;
+    display: inline;
+    top: 50%;
+    transform: translate(0%, -50%)
+}
+
+.date{
+    left: 31.5%;
+}
+
+.edit{
+    top: 20%;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.priority{
+    width: 50px;
+    text-align: center;
+    left: 61%
+}
+
+.card-buttons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    left: 91%
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 form{
@@ -66,7 +131,17 @@ form{
     transform: translate(-50%, -50%)
 }
 
+.form-wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
+.new-todo, .new-project{
+    align-self: center;
+    padding: 5px;
+    border-radius: 10px;
+}
 
 .hidden{
     display: none;

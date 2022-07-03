@@ -48,11 +48,11 @@ function handleNewProject(e){
     View.addListener('.delete-project', handleProjectDelete)
     View.addListener('.project-tab', showProjectTodos)
     e.target.reset()
-    e.target.classList.add('hidden')
+    View.hideAllForms()
 }
 
 function showProjectTodos(e){
-    const projectName = e.target.textContent
+    const projectName = e.target.getAttribute('data-project')
     const todos = Project.getProjectTodos(projectName)
     if(!todos) return
     View.populateProjectDisplay(projectName, todos)
@@ -71,7 +71,7 @@ function handleNewTodo(e){
     View.populateProjectDisplay(projectName, todos)
     View.addListener('.remove', handleTodoDelete)
     e.target.reset()
-    e.target.classList.add('hidden')
+    View.hideAllForms()
 }
 
 function handleTodoDelete(e){
@@ -112,7 +112,7 @@ function handleEditTodo(e){
     } 
     View.addListener('.remove', handleTodoDelete)
     e.target.reset()
-    e.target.classList.add('hidden')
+    View.hideAllForms()
 }
 
 document.querySelector('.project-form').addEventListener('submit', handleNewProject)

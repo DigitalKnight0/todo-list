@@ -25,53 +25,68 @@
         </div>
         <div class="todo-list">
             <p class="project-name"></p>
+            <div class="todo-header">
+                <p>Task Name</p>
+                <p>Due Date</p>
+                <p>Priority</p>
+                <p>Todo Options</p>
+            </div>
             <div class="display"></div>
         </div>
     </div>
 
-    <form action="" class="project-form hidden">
-        <label for="project-name">Project name: </label>
-        <input type="text" id="project-name" required>
+    <div class="form-wrapper n-project hidden">
+        <form action="" class="project-form">
+            <label for="project-name">Project name: </label>
+            <input type="text" id="project-name" required>
+            <button>Add Project</button>
+            <button class="cancel" type="button">Cancel</button>
+        </form>
+    </div>
 
-        <button>Add Project</button>
-    </form>
+    <div class="form-wrapper n-todo hidden">
+        <form action="" class="todo-form">
+            <p>Add New Todo to <span class="todo-form-title"></span></p>
+            <ul>
+                <li>
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" required>
+                </li>
+                <li>
+                    <label for="date">Date: </label>
+                    <input type="date" id="date" required>
+                </li>
+                <li>
+                    <label for="priority">Priority:</label>
+                    <select name="priority" id="priority">
+                        <option value="low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </li>
+            </ul>
+            <button>Add Todo</button>
+            <button class="cancel" type="button">Cancel</button>
+        </form>
+    </div>
 
-    <form action="" class="todo-form hidden">
-        <p>Add New Todo to <span class="todo-form-title"></span></p>
-
-        <label for="title">Title: </label>
-        <input type="text" id="title" required>
-
-        <label for="date">Date: </label>
-        <input type="date" id="date" required>
-
-        <label for="priority">Priority:</label>
-        <select name="priority" id="priority">
-            <option value="low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-
-        <button>Add Todo</button>
-    </form>
-
-    <form action="" class="edit-todo-form hidden">
-        <p>Edit Todo</p>
-
-        <label for="date">Due Date</label>
-        <input type="date" id="date" required>
-
-        <label for="priority">Priority:</label>
-        <select name="priority" id="priority">
-            <option value="low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-
-        <input type="hidden" id="index">
-        <input type="hidden" id="project">
-        <button>Save Changes</button>
-    </form>
+    <div class="form-wrapper e-todo hidden">
+        <form action="" class="edit-todo-form">
+            <p>Edit Todo</p>
+            <label for="date">Due Date</label>
+            <input type="date" id="date" required>
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority">
+                <option value="low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            <input type="hidden" id="index">
+            <input type="hidden" id="project">
+            <button>Save Changes</button>
+            <button class="cancel" type="button">Cancel</button>
+        </form>
+    </div>
 
     <template class="card-template">
         <div class="card">
@@ -79,8 +94,10 @@
             <p class="date"></p>
             <p class="priority"></p>
 
-            <button class="edit">Edit</button>
-            <button class="remove">X</button>
+            <div class="card-buttons">
+                <button class="edit">Edit</button>
+                <button class="remove">X</button>
+            </div>
         </div>
     </template>
 </body>

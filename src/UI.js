@@ -59,6 +59,7 @@ function populateSidebar(projects){
         if(project === 'inbox') return
         const tab = document.createElement('div')
         tab.classList.add('project-tab')
+        tab.setAttribute('data-project', project)
         const projectName = document.createElement('p')
         projectName.textContent = project
         const deleteBtn = document.createElement('button')
@@ -81,26 +82,39 @@ function addListener(selector, callback){
 addListener('.new-project', openProjectForm)
 
 function openProjectForm(){
-    document.querySelector('.project-form').classList.remove('hidden')
+    document.querySelector('.n-project').classList.remove('hidden')
 }
 
 function openTodoForm(e){
     const form = document.querySelector('.todo-form')
     const projectName = e.target.getAttribute('data-project')
     form.querySelector('.todo-form-title').textContent = projectName
-    form.classList.remove('hidden')
+    document.querySelector('.n-todo').classList.remove('hidden')
 }
 
 function openEditForm(e){
     const form = document.querySelector('.edit-todo-form')
     form.querySelector('#index').value = e.target.getAttribute('data-index')
     form.querySelector('#project').value = e.target.getAttribute('data-project')
-    form.classList.remove('hidden')
+    form.classList.remove('e-todo')
+}
+
+document.querySelectorAll('.cancel').forEach(button => {
+    button.addEventListener('click', (e)=> {
+      hideAllForms()
+    })
+})
+
+function hideAllForms(){
+    document.querySelectorAll('.form-wrapper').forEach(wrapper => {
+        wrapper.classList.add('hidden')
+    })
 }
 
 export default {
     populateProjectDisplay,
     populateSidebar,
     addListener,
-    populateTimedDisplay
+    populateTimedDisplay,
+    hideAllForms
 }
